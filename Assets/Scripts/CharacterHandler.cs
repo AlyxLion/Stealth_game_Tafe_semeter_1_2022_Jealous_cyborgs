@@ -41,6 +41,7 @@ public class CharacterHandler : MonoBehaviour
             //apply the inputs to our move direction value
             moveDirection = transform.TransformDirection(new Vector3(leftRight, 0, forwardBack));
             //adjust speed
+            transform.Rotate(Vector3.up * mouseSensitivity * Input.GetAxisRaw("Mouse X"));
             if (Input.GetKey(KeyCode.LeftShift))//if we press left shift we want to sprint
             {
                 speed = walkSpeed;//set speed to walk
